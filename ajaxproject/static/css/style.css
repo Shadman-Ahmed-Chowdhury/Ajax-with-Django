@@ -1,0 +1,10 @@
+.btn {
+    border: 2px solid black;
+}
+ul li {
+    list-style-type: none;
+    border: 1px solid #ddd; 
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px 10px;
+}
