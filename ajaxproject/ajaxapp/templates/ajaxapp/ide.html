@@ -1,0 +1,37 @@
+{% extends "ajaxapp/base.html" %}
+{% load static %}
+
+{% block left-column %}
+
+    <div class="container pt-5 form-group">
+        <label for="source-code">Paste your code here:</label>
+        <textarea class="form-control" name="source-code" id="source-code" cols="50" rows="15"></textarea>
+        <button class="btn btn-primary mt-3" id="runCode">Submit</button>
+    </div>
+    
+    <div id="loader" style="display:none;">
+         
+        <img src="{% static 'images/loader.gif' %}" height="200" width="200" alt="">
+       
+
+        
+    </div>
+
+    <ul id="output">
+
+    </ul>
+
+    <script>
+        $(document).ready(function()
+        {
+            $('#loading')
+                .hide()
+                .ajaxStart(function() {
+                    $(this).show();
+                })
+                .ajaxStop(function() {
+                    $(this).hide();
+                });
+        });
+    </script>
+{% endblock %}
