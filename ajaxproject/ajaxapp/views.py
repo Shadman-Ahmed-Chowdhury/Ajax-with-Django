@@ -29,11 +29,12 @@ def index(request):
 def runCode(request): 
     if request.is_ajax():
         source = request.POST['source']
+        lang = request.POST['lang']
         data = {
             'client_secret': '33b6232e8779721ea89df8491d3dc083facddbdd', 
             'async': 0, 
             'source': source,
-            'lang': "CPP", 
+            'lang': lang, 
             'time_limit': 4, 
             'memory_limit': 262100,
         }

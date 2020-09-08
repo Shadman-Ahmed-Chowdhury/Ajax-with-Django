@@ -6,15 +6,22 @@
     <div class="container pt-5 form-group">
         <label for="source-code">Paste your code here:</label>
         <textarea class="form-control" name="source-code" id="source-code" cols="50" rows="15"></textarea>
+        <label for="lang">Select Language</label>   
+        <select name="lang" id="lang" class="form-control">
+            <option value="C">C </option>
+            <option value="CPP">C++</option>
+            <option value="JAVA">Java </option>
+            <option value="JAVASCRIPT">JavaScript </option>
+            <option value="PYTHON">Python</option>
+        </select>
+        
         <button class="btn btn-primary mt-3" id="runCode">Submit</button>
     </div>
     
     <div id="loader" style="display:none;">
          
         <img src="{% static 'images/loader.gif' %}" height="200" width="200" alt="">
-       
 
-        
     </div>
 
     <ul id="output">

@@ -6,6 +6,7 @@ $(document).ready(function () {
     
     var csrf = $("input[name=csrfmiddlewaretoken]").val();
 
+    var selectedLang; 
     $("#getBtn").click(function() {
         console.log("Button clicked");
         $.ajax({
@@ -54,6 +55,7 @@ $(document).ready(function () {
         //var input_given = $("#custom-input").val();
         var run_data = {
             source: source_code,
+            lang: selectedLang, 
             csrfmiddlewaretoken: csrf,
         };
         
@@ -72,6 +74,7 @@ $(document).ready(function () {
                 var rstatus = response.run_status.status; 
 
                 var output = response.run_status.output; 
+                console.log(output);
                 if(accepted_output == output) {
                     $("#output").append('<li> <button class="btn btn-success">' +  "Accepted" + '</button>  </li>');
                 }
@@ -89,9 +92,9 @@ $(document).ready(function () {
 
     }
 
-
     $("#runCode").click(function() {
         console.log("Submit button clicked!"); 
+        selectedLang = document.getElementById("lang").value;
         getSourceCode();
         runCode(); 
     })
